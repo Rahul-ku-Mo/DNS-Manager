@@ -100,11 +100,11 @@ const Header = () => {
               className="overflow-hidden rounded-full"
             >
               <img
-                src="/placeholder-user.jpg"
+                src="https://placehold.it/36x36"
                 width={36}
                 height={36}
                 alt="Avatar"
-                className="overflow-hidden"
+                className="overflow-hidden object-cover rounded-full"
               />
             </Button>
           </DropdownMenuTrigger>
@@ -112,7 +112,7 @@ const Header = () => {
             <DropdownMenuLabel>My Account</DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuItem>Settings</DropdownMenuItem>
-            <DropdownMenuItem>Support</DropdownMenuItem>
+
             <DropdownMenuSeparator />
             <DropdownMenuItem onClick={handleLogout}>Logout</DropdownMenuItem>
           </DropdownMenuContent>

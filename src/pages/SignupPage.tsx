@@ -143,9 +143,13 @@ const SignupPage = () => {
           </CardContent>
         </form>
       </Card>
-      <h2 className="w-full p-2 text-sm text-slate-600 hover:text-slate-800 bg-slate-200/20 shadow-sm font-bold fixed bottom-0 flex justify-end items-center gap-2">
+      <Link
+        to="https://github.com/Rahul-ku-Mo/DNS-Manager"
+        target="_blank"
+        className="w-full p-2 text-sm text-slate-600 hover:text-slate-800 bg-slate-200/20 shadow-sm font-bold fixed bottom-0 flex justify-end items-center gap-2"
+      >
         Check out this page <GitHubLogoIcon />
-      </h2>
+      </Link>
     </div>
   );
 };
