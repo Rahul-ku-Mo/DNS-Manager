@@ -65,8 +65,8 @@ const CreateDialog = () => {
     onSuccess: () => {
       toast("DNS record created successfully!!");
     },
-    onError: () => {
-      toast("DNS record not created!!");
+    onError: (error) => {
+      toast.error(error.message as string);
     },
     onSettled: () => {
       queryClient.invalidateQueries({ queryKey: ["dns-records"] });

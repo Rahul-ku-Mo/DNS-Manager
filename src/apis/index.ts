@@ -27,7 +27,10 @@ export const createDNSRecord: (
   const response = await axios.post(
     `${import.meta.env.VITE_API_URL}/domain/records`,
     {
-      record,
+      record: record,
+      hostedZoneData: {
+        name: record.domain,
+      },
     },
     {
       headers: {
