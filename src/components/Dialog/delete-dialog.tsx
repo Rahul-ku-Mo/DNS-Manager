@@ -12,12 +12,15 @@ import {
 import Cookies from "js-cookie";
 import { toast } from "sonner";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useState } from "react";
 
 interface DeleteDialogProps {
   recordId: string;
 }
 const DeleteDialog: React.FC<DeleteDialogProps> = ({ recordId }) => {
   const accessToken = Cookies.get("token") as string;
+
+  const [open, setOpen] = useState<boolean>(false);
 
   const queryClient = useQueryClient();
 
@@ -32,11 +35,13 @@ const DeleteDialog: React.FC<DeleteDialogProps> = ({ recordId }) => {
     },
     onSettled: () => {
       queryClient.invalidateQueries({ queryKey: ["dns-records"] });
+
+      setOpen(false);
     },
   });
 
   return (
-    <Dialog>
+    <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <Button variant="ghost" className="justify-start">
           Delete
