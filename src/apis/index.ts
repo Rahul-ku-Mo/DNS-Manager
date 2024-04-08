@@ -59,7 +59,7 @@ export const DeleteDNSRecord: (
     }
   );
 
-  if (response.status === 200 || response.status === 201) {
+  if (response.status === 204) {
     return response.data.data;
   } else {
     throw new Error(`Request failed with status code ${response.status}`);
